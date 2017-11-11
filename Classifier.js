@@ -1,4 +1,4 @@
-const elasticlunr = require('elasticlunr');
+const elasticlunr = require('./elasticlunr.loader');
 
 module.exports = class Classifier {
   constructor(classification = null) {
