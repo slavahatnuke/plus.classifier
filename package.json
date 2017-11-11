@@ -1,6 +1,6 @@
 {
   "name": "plus.classifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The simplest classifier `elasticlunr` based.",
   "main": "index.js",
   "scripts": {
