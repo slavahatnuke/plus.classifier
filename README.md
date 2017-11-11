@@ -15,13 +15,21 @@ myClassifier.add('the drive has a 2TB capacity.', 'hardware');
 myClassifier.add('i need a new power supply.', 'hardware');
 myClassifier.add('can you play some new music?', 'music');
 
-
+//classify -> label
 console.log(myClassifier.classify('did the tests pass?')); // -> software
 console.log(myClassifier.classify('did you buy a new drive?')); // -> hardware
 console.log(myClassifier.classify('What is the capacity?')); // -> hardware
 console.log(myClassifier.classify('Lets meet tomorrow?')); // -> meeting
 console.log(myClassifier.classify('Can you play some stuff?')); // -> music
 
+// classification -> array
+const classification = myClassifier.classification('did you buy a new drive?');
+console.log(classification);
+// [ { score: 0.40387812326239664, label: 'hardware' },
+//   { score: 0.3258463268246468, label: 'music' },
+//   { score: 0.2821911967599909, label: 'hardware' } ]
+
+    
 // Example #2, array constructor
 const secondClassifier = classifier([
   ['my unit-tests failed.', 'software'],

@@ -16,7 +16,7 @@ module.exports = class Classifier {
 
   add(features, label = null) {
 
-    if(Array.isArray(features) && label === null) {
+    if (Array.isArray(features) && label === null) {
       features.forEach(([features, label]) => this.add(features, label));
       return this;
     }
@@ -31,13 +31,22 @@ module.exports = class Classifier {
     return this;
   }
 
-  classify(features) {
-    const results = this.index.search(('' + features), {fields: {feature: {boost: 1}}});
+  classify(feature) {
+    const results = this._classify(feature);
 
     if (results.length) {
       const lead = results.shift();
-      const id = parseInt(lead.ref, 10);
-      return this.labels[id] || undefined;
+      return this.labels[+lead.ref] || undefined;
     }
+  }
+
+  _classify(feature) {
+    return this.index.search(('' + feature), {fields: {feature: {boost: 1}}});
+  }
+
+  classification(feature) {
+    return this._classify(feature).map(({score, ref}) => {
+      return {score, label: this.labels[+ref]};
+    })
   }
 }
