@@ -61,7 +61,6 @@ describe('Classifier', () => {
     c1.add('can you play some new music?', 'music');
 
     const classification = c1.classification('did you buy a new drive?');
-    console.log(classification);
 
     assert.equal(classification.length, 3);
 
