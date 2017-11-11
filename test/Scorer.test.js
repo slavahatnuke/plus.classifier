@@ -23,23 +23,23 @@ describe('Scorer', () => {
     // console.log(result);
 
     assert.equal(result.positive.toFixed(2), 0);
-    assert.equal(result.negative.toFixed(2), -5.31);
+    assert.equal(result.negative.toFixed(2), -4.60);
 
-    assert.equal(result.weight.toFixed(2), -5.31);
-    assert.equal(result.expertise.toFixed(2), 5.31);
+    assert.equal(result.weight.toFixed(2), -4.60);
+    assert.equal(result.expertise.toFixed(2), 4.60);
 
     assert.equal(result.positivity.toFixed(2), 0);
-    assert.equal(result.negativity.toFixed(2), -53148467371.59);
+    assert.equal(result.negativity.toFixed(2), -46027922916.01);
 
     result = s1.score('My skills javascript joomla');
 
     // console.log(result);
 
-    assert.equal(result.positive.toFixed(2), 1.77);
-    assert.equal(result.negative.toFixed(2), -3.54);
+    assert.equal(result.positive.toFixed(2), 1.53);
+    assert.equal(result.negative.toFixed(2), -3.07);
 
-    assert.equal(result.weight.toFixed(2), -1.77);
-    assert.equal(result.expertise.toFixed(2), 5.31);
+    assert.equal(result.weight.toFixed(2), -1.53);
+    assert.equal(result.expertise.toFixed(2), 4.60);
 
     assert.equal(result.positivity.toFixed(2), 0.5);
     assert.equal(result.negativity.toFixed(2), 2);
@@ -48,11 +48,11 @@ describe('Scorer', () => {
 
     // console.log(result);
 
-    assert.equal(result.positive.toFixed(2), 3.07);
-    assert.equal(result.negative.toFixed(2), -1.53);
+    assert.equal(result.positive.toFixed(2), 2.74);
+    assert.equal(result.negative.toFixed(2), -1.37);
 
-    assert.equal(result.weight.toFixed(2), 1.53);
-    assert.equal(result.expertise.toFixed(2), 4.60);
+    assert.equal(result.weight.toFixed(2), 1.37);
+    assert.equal(result.expertise.toFixed(2), 4.12);
 
     assert.equal(result.positivity.toFixed(2), 2);
     assert.equal(result.negativity.toFixed(2), 0.5);
@@ -61,13 +61,13 @@ describe('Scorer', () => {
 
     // console.log(result);
 
-    assert.equal(result.positive.toFixed(2), 3.54);
+    assert.equal(result.positive.toFixed(2), 3.07);
     assert.equal(result.negative.toFixed(2), 0);
 
-    assert.equal(result.weight.toFixed(2), 3.54);
-    assert.equal(result.expertise.toFixed(2), 3.54);
+    assert.equal(result.weight.toFixed(2), 3.07);
+    assert.equal(result.expertise.toFixed(2), 3.07);
 
-    assert.equal(result.positivity.toFixed(2), 35432311581.06);
+    assert.equal(result.positivity.toFixed(2), 30685281944.01);
     assert.equal(result.negativity.toFixed(2), 0);
 
   })

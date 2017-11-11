@@ -8,6 +8,7 @@ if (global.define) {
 } else {
   elasticlunr = require('elasticlunr');
 }
-// elasticlunr.clearStopWords();
+
+elasticlunr.clearStopWords();
 
 module.exports = elasticlunr;

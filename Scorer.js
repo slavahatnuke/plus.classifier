@@ -1,5 +1,4 @@
 const elasticlunr = require('./elasticlunr.loader');
-// elasticlunr.clearStopWords();
 
 module.exports = class Scorer {
   constructor(classification = [], options = {}) {

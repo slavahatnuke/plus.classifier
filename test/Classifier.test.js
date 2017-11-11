@@ -64,13 +64,13 @@ describe('Classifier', () => {
 
     assert.equal(classification.length, 3);
 
-    assert.equal(classification[0].score.toFixed(2), .40);
+    assert.equal(classification[0].score.toFixed(2), .52);
     assert.equal(classification[0].label, 'hardware');
 
-    assert.equal(classification[1].score.toFixed(2), .33);
+    assert.equal(classification[1].score.toFixed(2), .52);
     assert.equal(classification[1].label, 'music');
 
-    assert.equal(classification[2].score.toFixed(2), .28);
+    assert.equal(classification[2].score.toFixed(2), .46);
     assert.equal(classification[2].label, 'hardware');
   })
 
