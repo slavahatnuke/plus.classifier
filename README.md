@@ -1,8 +1,9 @@
 # plus.classifier
-The simplest classifier `elasticlunr` based.
+The simplest classifier.
 
+### Classifier
 ```javascript
-const classifier = require('plus.classifier');
+const {classifier} = require('plus.classifier');
 
 // Example #1
 const myClassifier = classifier();

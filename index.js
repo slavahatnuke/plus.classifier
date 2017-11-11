@@ -1,2 +1,5 @@
 const Classifier = require('./Classifier');
-module.exports = (classification = null) => new Classifier(classification);
+
+module.exports = {
+  classifier: (classification = null) => new Classifier(classification)
+};
