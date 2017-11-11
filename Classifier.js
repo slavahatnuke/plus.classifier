@@ -5,6 +5,7 @@ module.exports = class Classifier {
     this.index = elasticlunr(function () {
       this.addField('feature');
       this.setRef('id');
+      this.saveDocument(false);
     });
 
     this.labels = [];
