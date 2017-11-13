@@ -64,11 +64,14 @@ s1.add('Joomla', -20);
 s1.add('Wordpress', -20);
 
 const result = s1.score('My skills javascript php Angular');
+console.log(result);
 
-// { positive: 3.068528194400547,
-//   negative: -1.5342640972002735,
-//   weight: 1.5342640972002735,
-//   expertise: 4.602792291600821,
+// { positive: 2.744575053421725,
+//   negative: 1.3722875267108625,
+//   weight: 1.3722875267108625,
+//   expertise: 4.1168625801325875,
 //   positivity: 2,
-//   negativity: 0.5 }
+//   negativity: 0.5,
+//   activity: 1.5 }
+
 ```
