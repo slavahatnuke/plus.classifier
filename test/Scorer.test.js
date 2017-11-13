@@ -23,39 +23,43 @@ describe('Scorer', () => {
     // console.log(result);
 
     assert.equal(result.positive.toFixed(2), 0);
-    assert.equal(result.negative.toFixed(2), -4.60);
+    assert.equal(result.negative.toFixed(2), 4.60);
 
     assert.equal(result.weight.toFixed(2), -4.60);
     assert.equal(result.expertise.toFixed(2), 4.60);
 
     assert.equal(result.positivity.toFixed(2), 0);
-    assert.equal(result.negativity.toFixed(2), -46027922916.01);
+    assert.equal(result.negativity.toFixed(2), 46027922916.01);
+
+    assert.equal(result.activity.toFixed(2), -46027922916.01);
 
     result = s1.score('My skills javascript joomla');
 
     // console.log(result);
 
     assert.equal(result.positive.toFixed(2), 1.53);
-    assert.equal(result.negative.toFixed(2), -3.07);
+    assert.equal(result.negative.toFixed(2), 3.07);
 
     assert.equal(result.weight.toFixed(2), -1.53);
     assert.equal(result.expertise.toFixed(2), 4.60);
 
     assert.equal(result.positivity.toFixed(2), 0.5);
     assert.equal(result.negativity.toFixed(2), 2);
+    assert.equal(result.activity.toFixed(2), -1.5);
 
     result = s1.score('My skills javascript php Angular');
 
     // console.log(result);
 
     assert.equal(result.positive.toFixed(2), 2.74);
-    assert.equal(result.negative.toFixed(2), -1.37);
+    assert.equal(result.negative.toFixed(2), 1.37);
 
     assert.equal(result.weight.toFixed(2), 1.37);
     assert.equal(result.expertise.toFixed(2), 4.12);
 
     assert.equal(result.positivity.toFixed(2), 2);
     assert.equal(result.negativity.toFixed(2), 0.5);
+    assert.equal(result.activity.toFixed(2), 1.5);
 
     result = s1.score('My skills javascript node.js');
 
@@ -69,6 +73,7 @@ describe('Scorer', () => {
 
     assert.equal(result.positivity.toFixed(2), 30685281944.01);
     assert.equal(result.negativity.toFixed(2), 0);
+    assert.equal(result.activity.toFixed(2), 30685281944.01);
 
   })
 
@@ -99,6 +104,7 @@ describe('Scorer', () => {
 
     assert.equal(result.positivity.toFixed(2), 0);
     assert.equal(result.negativity.toFixed(2), 0);
+    assert.equal(result.activity.toFixed(2), 0);
   })
 
   it('score / constructor', () => {
@@ -113,13 +119,14 @@ describe('Scorer', () => {
     result = s1.score('Lorem ipsum javascript php');
 
     assert.equal(result.positive.toFixed(2), 1.53);
-    assert.equal(result.negative.toFixed(2), -3.07);
+    assert.equal(result.negative.toFixed(2), 3.07);
 
     assert.equal(result.weight.toFixed(2), -1.53);
     assert.equal(result.expertise.toFixed(2), 4.6);
 
     assert.equal(result.positivity.toFixed(2), 0.5);
     assert.equal(result.negativity.toFixed(2), 2);
+    assert.equal(result.activity.toFixed(2), -1.5);
   })
 
 });

@@ -23,7 +23,8 @@ module.exports = class Scorer {
       weight: 0,
       expertise: 0,
       positivity: 0,
-      negativity: 0
+      negativity: 0,
+      activity: 0
     };
 
     const index = elasticlunr(function () {
@@ -44,18 +45,26 @@ module.exports = class Scorer {
         if (weight >= 0) {
           result.positive += value;
         } else {
-          result.negative += value;
+          result.negative -= value;
         }
       }
     });
 
-    result.weight = result.positive + result.negative;
-    result.expertise = result.positive - result.negative;
+    result.weight = result.positive - result.negative;
+    result.expertise = result.positive + result.negative;
 
-    result.positivity = result.negative ? result.positive / -result.negative : this.options.activity * result.positive;
-    result.negativity = result.positive ? -result.negative / result.positive : this.options.activity * result.negative;
+    const default_activity = this.options.activity;
+
+    result.positivity = result.negative ? result.positive / result.negative : default_activity * result.positive;
+    result.negativity = result.positive ? result.negative / result.positive : default_activity * result.negative;
+
+    result.activity = result.positivity - result.negativity;
 
     return result;
+  }
+
+  calculate() {
+
   }
 
 };
