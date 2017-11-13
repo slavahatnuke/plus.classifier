@@ -129,4 +129,38 @@ describe('Scorer', () => {
     assert.equal(result.activity.toFixed(2), -1.5);
   })
 
+
+  it('calculate', () => {
+
+    const s1 = Scorer();
+
+    let result;
+    result = s1.calculate({positive: 2, negative: 1});
+    // console.log(result);
+
+    assert.equal(result.positive.toFixed(2), 2);
+    assert.equal(result.negative.toFixed(2), 1);
+
+    assert.equal(result.weight.toFixed(2), 1);
+    assert.equal(result.expertise.toFixed(2), 3);
+
+    assert.equal(result.positivity.toFixed(2), 2);
+    assert.equal(result.negativity.toFixed(2), 0.5);
+    assert.equal(result.activity.toFixed(2), 1.5);
+
+    result = s1.calculate({positive: 2, negative: 0});
+    // console.log(result);
+
+    assert.equal(result.positive.toFixed(2), 2);
+    assert.equal(result.negative.toFixed(2), 0);
+
+    assert.equal(result.weight.toFixed(2), 2);
+    assert.equal(result.expertise.toFixed(2), 2);
+
+    assert.equal(result.positivity.toFixed(2), 20000000000);
+    assert.equal(result.negativity.toFixed(2), 0);
+    assert.equal(result.activity.toFixed(2), 20000000000);
+  })
+
+
 });

@@ -20,11 +20,6 @@ module.exports = class Scorer {
     const result = {
       positive: 0,
       negative: 0,
-      weight: 0,
-      expertise: 0,
-      positivity: 0,
-      negativity: 0,
-      activity: 0
     };
 
     const index = elasticlunr(function () {
@@ -50,6 +45,20 @@ module.exports = class Scorer {
       }
     });
 
+    return this.calculate(result);
+  }
+
+  calculate({positive, negative}) {
+    const result = {
+      positive: positive,
+      negative: negative,
+      weight: 0,
+      expertise: 0,
+      positivity: 0,
+      negativity: 0,
+      activity: 0
+    };
+
     result.weight = result.positive - result.negative;
     result.expertise = result.positive + result.negative;
 
@@ -61,10 +70,6 @@ module.exports = class Scorer {
     result.activity = result.positivity - result.negativity;
 
     return result;
-  }
-
-  calculate() {
-
   }
 
 };
